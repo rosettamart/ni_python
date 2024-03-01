@@ -2,6 +2,7 @@ import nidaqmx as ni
 import time
 
 #Create a task to read the thermocouple data
+#cDAQ NI9174, Mod2, AI0
 with ni.Task() as DAQtask:         #create a task to read the thermocouple data
     DAQtask.ai_channels.add_ai_thrmcpl_chan("cDAQ1Mod2/ai0",name_to_assign_to_channel='TC_CH',thermocouple_type=ni.constants.ThermocoupleType.K,
     cjc_source=ni.constants.CJCSource.BUILT_IN)  #add the thermocouple channel
